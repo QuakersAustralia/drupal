@@ -23,3 +23,8 @@ dependencies[] = overlay
 dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
+
+; Information added by Drupal.org packaging script on 2022-01-12
+version = "7.85"
+project = "drupal"
+datestamp = "1642026335"
