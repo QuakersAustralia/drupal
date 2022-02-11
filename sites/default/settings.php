@@ -244,7 +244,10 @@
  *   );
  * @endcode
  */
-$databases = array();
+
+# $databases = array();
+# This will be retrieved from settings.local.php, so we don't check passwords into git.
+# https://www.oliverdavies.uk/blog/include-local-drupal-settings-file-environment-configuration-and-overrides/
 
 /**
  * Quoting of identifiers in MySQL.
@@ -294,7 +297,9 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = '';
+# This will be retrieved from settings.local.php, so we don't check passwords into git.
+# https://www.oliverdavies.uk/blog/include-local-drupal-settings-file-environment-configuration-and-overrides/
+# $drupal_hash_salt = '';
 
 /**
  * Base URL (optional).
@@ -782,3 +787,10 @@ $conf['mail_display_name_site_name'] = TRUE;
  * directory.
  */
 # $conf['skip_permissions_hardening'] = TRUE;
+
+# Local settings that we don't want to commit to git
+# https://www.oliverdavies.uk/blog/include-local-drupal-settings-file-environment-configuration-and-overrides/
+$local_settings = __DIR__ . '/settings.local.php';
+if (file_exists($local_settings)) {
+  include $local_settings;
+}
