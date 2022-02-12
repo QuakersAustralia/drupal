@@ -1,6 +1,16 @@
+# gitignore template for Drupal 7 projects
+#
+# It is recommended that you use `Drupal.gitignore` as this is the latest version
+
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings.local.php
+sites/example.sites.php
 
-# Ignore paths that contain user-generated content.
+# Ignore paths that contain generated content.
 sites/*/files
 sites/*/private
+sites/*/translations
+
+# Mac OS generated files #
+######################
+.DS_Store
